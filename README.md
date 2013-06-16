@@ -1,4 +1,5 @@
 # lxmx_oh_my_zsh
+[![Build Status](https://travis-ci.org/lxmx/chef-oh-my-zsh.png?branch=master)](https://travis-ci.org/lxmx/chef-oh-my-zsh)
 
 ## Description
 
@@ -49,7 +50,7 @@ No-op, does nothing.
 Processes `node['users']` and installs oh-my-zsh for the ones whose data_bags enable it, e.g.
 
 ```
-{ 
+{
   "id"        : "ranger",
   ...
   "oh-my-zsh" : { "enabled": true }

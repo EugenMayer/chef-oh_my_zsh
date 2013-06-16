@@ -21,7 +21,6 @@ action :create do
     owner login
     mode '644'
     variables({
-      :user           => login,
       :theme          => new_resource.theme,
       :case_sensitive => new_resource.case_sensitive,
       :plugins        => new_resource.plugins,
