@@ -30,3 +30,4 @@ suites:
     users:
     - testman
     - joe
+    - matt
