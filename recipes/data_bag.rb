@@ -1,4 +1,4 @@
-include_recipe 'zsh'
+include_recipe 'lxmx_oh_my_zsh'
 
 node['users'].each do |name|
   user = data_bag_item('users', name)
