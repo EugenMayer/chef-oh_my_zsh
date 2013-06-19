@@ -6,7 +6,19 @@ def load_current_resource
   end
 end
 
-action :create do
+action :ensure do
+  if ::File.exists?("#{@home}/.oh-my-zsh") && ::File.exists?("#{@home}/.zshrc")
+    Chef::Log.info("#{@home}/.oh-my-zsh exists and action is :ensure, skipping")
+  else
+    install
+  end
+end
+
+action :update do
+  install
+end
+
+def install
   login, home = @login, @home
 
   arch_r = ark ".oh-my-zsh" do

@@ -73,11 +73,18 @@ Processes `node['users']` and installs oh-my-zsh for the ones whose data_bags en
   </thead>
   <tbody>
     <tr>
-      <td>create</td>
+      <td>ensure</td>
       <td>
-        Download oh-my-zsh into <code>~/.oh-my-zsh</code>, create and populate <code>~/.zshrc</code>.
+        Install only if <code>~/.oh-my-zsh</code> or <code>~/.zshrc</code> is missing.
       </td>
       <td>Yes</td>
+    </tr>
+    <tr>
+      <td>update</td>
+      <td>
+        Install oh-my-zsh into <code>~/.oh-my-zsh</code>, create and populate <code>~/.zshrc</code>.
+      </td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>

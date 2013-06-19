@@ -1,4 +1,4 @@
-actions :create
+actions [:ensure, :update]
 
 attribute :login,          :kind_of => String, :name_attribute => true
 attribute :home,           :kind_of => String
@@ -9,5 +9,5 @@ attribute :autocorrect,    :kind_of => [TrueClass, FalseClass], :default => true
 
 def initialize(*args)
   super
-  @action = :create
+  @action = :ensure
 end
