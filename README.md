@@ -63,75 +63,22 @@ Processes `node['users']` and installs oh-my-zsh for the ones whose data_bags en
 
 #### Actions
 
-<table>
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ensure</td>
-      <td>
-        Install only if <code>~/.oh-my-zsh</code> or <code>~/.zshrc</code> is missing.
-      </td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>update</td>
-      <td>
-        Install oh-my-zsh into <code>~/.oh-my-zsh</code>, create and populate <code>~/.zshrc</code>.
-      </td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+| Action | Description                                                            | Default |
+|--------|------------------------------------------------------------------------|---------|
+| ensure | Install oh-my-zsh into `~/.oh-my-zsh`, create and populate `~/.zshrc.` | yes     |
+| create | Install only if `~/.oh-my-zsh or` `~/.zshrc` is missing.               | no      |
 
 #### Attributes
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Description</th>
-      <th>Default Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>login</td>
-      <td><b>Name attribute:</b> The login of the user.</td>
-      <td><code>nil</code></td>
-    </tr>
-    <tr>
-      <td>home</td>
-      <td>User's home directory.</td>
-      <td><code>/home/<i>username</i></code> or <code>/root</code></td>
-    </tr>
-    <tr>
-      <td>theme</td>
-      <td>Theme to use</td>
-      <td><code>alanpeabody</code></td>
-    </tr>
-    <tr>
-      <td>plugins</td>
-      <td>Plugins to enable</td>
-      <td><code>[]</code></td>
-    </tr>
-	<tr>
-      <td>case_sensitive</td>
-      <td>Use case sensitive completion</td>
-      <td><code>false</code></td>
-    </tr>
-	<tr>
-      <td>autocorrect</td>
-      <td>Use autocorrection feature</td>
-      <td><code>true</code></td>
-    </tr>
-  </tbody>
-</table>
+| Attribute      	| Description                                	| Default Value               	|
+|----------------	|--------------------------------------------	|-----------------------------	|
+| login          	| **Name attribute:** The login of the user. 	| `nil`                       	|
+| home           	| User's home directory.                     	| `/home/username or` `/root` 	|
+| theme          	| Theme to use                               	| `alanpeabody`               	|
+| plugins        	| Plugins to enable                          	| `[]`                        	|
+| case_sensitive 	| Use case sensitive completion              	| `false`                     	|
+| autocorrect    	| Use autocorrection feature                 	| `true`                      	|
+| locale         	| set your locale                            	| UTF8                        	|
 
 #### .zshrc.chef.local / .zshrc.local customziation made easy
 
@@ -165,9 +112,3 @@ This cookbook is heavily based on https://github.com/lxmx/chef-oh-my-zsh so a lo
 Licensed under BSD license.
 
     http://opensource.org/licenses/BSD-2-Clause
-
-| Attribute 	| Description                                	| Default Value 	|
-|-----------	|--------------------------------------------	|---------------	|
-| login     	| **Name attribute:** The login of the user. 	| `nil`         	|
-|           	|                                            	|               	|
-|           	|                                            	|               	|

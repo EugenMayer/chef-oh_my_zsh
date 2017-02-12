@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+ - remove update and make ensure the the "update" and the default. The old ensure is now called create
+ - Fix README layout
+ 
 ## 0.1.0
  - Initial release
  - added optional support for .zshrc.chef.local and .zshrc.user.local to be able to easily customize the zsh configuration, aliases or similar
