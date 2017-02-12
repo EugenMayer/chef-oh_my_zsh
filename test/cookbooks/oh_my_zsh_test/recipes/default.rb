@@ -28,3 +28,10 @@ template '/home/mary/.zshrc.chef.local' do
   owner 'mary'
 end
 
+# DO not do this in production, this file should be user controlled. We just do this for testing reasons
+template '/home/mary/.zshrc.local' do
+  source 'zshrc.local.erb'
+  owner 'mary'
+end
+
+
