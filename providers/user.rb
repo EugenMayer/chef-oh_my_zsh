@@ -1,6 +1,6 @@
 def load_current_resource
   @login = new_resource.login
-
+  # TODO: == ?
   unless @home = new_resource.home
     @home = @login == 'root' ? '/root' : "/home/#{@login}"
   end
@@ -21,14 +21,14 @@ end
 def install
   login, home = @login, @home
 
-  arch_r = ark ".oh-my-zsh" do
+  arch_r = ark '.oh-my-zsh' do
     path home
     url 'https://github.com/robbyrussell/oh-my-zsh/archive/master.tar.gz'
     action :put
   end
 
   conf_r = template "#{home}/.zshrc" do
-    cookbook 'lxmx_oh_my_zsh'
+    cookbook 'oh_my_zsh'
     source 'zshrc.erb'
     owner login
     mode '644'
@@ -36,7 +36,8 @@ def install
       :theme          => new_resource.theme,
       :case_sensitive => new_resource.case_sensitive,
       :plugins        => new_resource.plugins,
-      :autocorrect    => new_resource.autocorrect
+      :autocorrect    => new_resource.autocorrect,
+      :locale         => new_resource.locale
     })
   end
 

@@ -42,4 +42,10 @@ unsetopt correct
 unsetopt correct_all
 <% end %>
 
-# Customize to your needs...
+export LC_ALL=<%= @locale %>
+
+# include .zshrc.chef.local if it exists
+[ -f ~/.zshrc.chef.local ] && source ~/.zshrc.chef.local
+
+# include .zshrc.chef.local if it exists
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

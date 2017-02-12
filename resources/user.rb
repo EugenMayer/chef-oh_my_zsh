@@ -6,6 +6,7 @@ attribute :theme,          :kind_of => String,                  :default => 'ala
 attribute :plugins,        :kind_of => Array,                   :default => []
 attribute :case_sensitive, :kind_of => [TrueClass, FalseClass], :default => false
 attribute :autocorrect,    :kind_of => [TrueClass, FalseClass], :default => true
+attribute :locale,         :kind_of => String,                  :default => 'en_US.UTF8'
 
 def initialize(*args)
   super

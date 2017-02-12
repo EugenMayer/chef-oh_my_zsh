@@ -1,22 +1,30 @@
 include_recipe 'zsh'
-include_recipe 'lxmx_oh_my_zsh'
+include_recipe 'oh_my_zsh'
 
 user_account 'lenny' do
   shell '/bin/zsh'
   home '/home/lenny'
 end
 
-lxmx_oh_my_zsh_user 'lenny' do
+oh_my_zsh_user 'lenny' do
   home  '/home/lenny'
   theme 'aussiegeek'
+  action :update
 end
 
 user_account 'mary' do
   shell '/bin/zsh'
 end
 
-lxmx_oh_my_zsh_user 'mary' do
+oh_my_zsh_user 'mary' do
   plugins        %w{rvm ruby}
   autocorrect    false
   case_sensitive true
+  action :update
 end
+
+template '/home/mary/.zshrc.chef.local' do
+  source 'zshrc.chef.local.erb'
+  owner 'mary'
+end
+

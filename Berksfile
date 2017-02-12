@@ -3,5 +3,5 @@ site :opscode
 metadata
 
 group :integration do
-  cookbook 'user_test', :path => './test/cookbooks/user_test'
+  cookbook 'oh_my_zsh_test', :path => './test/cookbooks/oh_my_zsh_test'
 end
