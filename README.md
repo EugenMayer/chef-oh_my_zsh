@@ -165,3 +165,9 @@ This cookbook is heavily based on https://github.com/lxmx/chef-oh-my-zsh so a lo
 Licensed under BSD license.
 
     http://opensource.org/licenses/BSD-2-Clause
+
+| Attribute 	| Description                                	| Default Value 	|
+|-----------	|--------------------------------------------	|---------------	|
+| login     	| **Name attribute:** The login of the user. 	| `nil`         	|
+|           	|                                            	|               	|
+|           	|                                            	|               	|

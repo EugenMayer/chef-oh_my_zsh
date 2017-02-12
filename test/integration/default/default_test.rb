@@ -45,16 +45,16 @@ describe file('/home/mary/.zshrc') do
 end
 
 # test if the foo alias exist for mary, thus our zshrc.chef.local file has been loaded
-describe command('sudo su -l mary -c "zsh -i -c foo"') do
+describe command('sudo -i -u mary -- zsh -i -c foo') do
   its('exit_status') { should eq 0 }
 end
 
 # test if the foo alias exist for mary, thus our zshrc.chef.local file has been loaded
-describe command('sudo su -l mary -c "zsh -i -c bar_user"') do
+describe command('sudo -i -u mary -- zsh -i -c bar_user') do
   its('exit_status') { should eq 0 }
 end
 
-describe command('sudo su -l mary -c "zsh -i -c not_hear"') do
+describe command('sudo -i -u mary -- zsh -i -c not_hear') do
   its('exit_status') { should eq 127 }
 end
 
