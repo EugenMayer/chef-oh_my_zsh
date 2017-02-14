@@ -9,7 +9,7 @@ end
 oh_my_zsh_user 'lenny' do
   home  '/home/lenny'
   theme 'aussiegeek'
-  action :update
+  action :ensure
 end
 
 user_account 'mary' do
@@ -20,7 +20,7 @@ oh_my_zsh_user 'mary' do
   plugins        %w{rvm ruby}
   autocorrect    false
   case_sensitive true
-  action :update
+  action :ensure
 end
 
 template '/home/mary/.zshrc.chef.local' do

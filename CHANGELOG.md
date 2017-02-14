@@ -1,6 +1,10 @@
 # Changelog
 
 ## 0.1.2
+ - missing name for ark
+ - fix permissions of oh_my_zsh folder
+ 
+## 0.1.2
  - fix clone resource issue
  
 ## 0.1.1
