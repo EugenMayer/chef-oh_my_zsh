@@ -1,6 +1,9 @@
 # Changelog
 
-## 0.2.0
+## 0.1.2
+ - fix clone resource issue
+ 
+## 0.1.1
  - remove update and make ensure the the "update" and the default. The old ensure is now called create
  - Fix README layout
  

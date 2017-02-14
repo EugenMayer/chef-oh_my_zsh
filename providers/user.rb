@@ -21,7 +21,7 @@ end
 def install
   login, home = @login, @home
 
-  arch_r = ark '.oh-my-zsh' do
+  arch_r = ark ".oh-my-zsh for #{@login}" do
     path home
     url 'https://github.com/robbyrussell/oh-my-zsh/archive/master.tar.gz'
     action :put
