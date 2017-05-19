@@ -1,3 +1,4 @@
+# see https://docs-archive.chef.io/release/12-2/custom_resources.html#custom-providers-w-platform-resources
 def load_current_resource
   @login = new_resource.login
   # TODO: == ?
@@ -21,13 +22,13 @@ end
 def install
   login, home = @login, @home
 
-  arch_r = ark ".oh-my-zsh for #{@login}" do
+  arch_r = ark ".oh-my-zsh for #{login}" do
     name '.oh-my-zsh'
     path home
     url 'https://github.com/robbyrussell/oh-my-zsh/archive/master.tar.gz'
     action :put
-    owner @login
-    group @login
+    owner login
+    group login
   end
 
   conf_r = template "#{home}/.zshrc" do

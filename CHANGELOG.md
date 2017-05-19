@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+ - fix login usage for owner/group in ark being nil
+ 
 ## 0.1.2
  - missing name for ark
  - fix permissions of oh_my_zsh folder
