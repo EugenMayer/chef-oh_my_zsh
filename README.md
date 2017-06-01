@@ -29,7 +29,6 @@ The `oh_my_zsh::data_bag` recipe assumes that you're using the `user::data_bag` 
 ### Platform
 This cookbook has been [tested](https://github.com/lxmx/chef-oh-my-zsh/blob/master/.kitchen.yml) with the following OSes:
 
-* centos / redhat
 * ubuntu
 * gentoo
 
@@ -103,6 +102,12 @@ oh_my_zsh_user 'jessie' do
 end
 ```
 
+## Tests
+
+You can run the test using kitchen
+
+    chef exec kitchen converge   
+    
 ## Credits
 
 This cookbook is heavily based on https://github.com/lxmx/chef-oh-my-zsh so a lot of credits go to Vasily Mikhaylichenko
