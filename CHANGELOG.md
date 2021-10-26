@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- add support for powerlevel10k theme
+
 ## 0.2.0
 
 - add .zshrc.earliest.local and .zshrc.earliest.automated support
