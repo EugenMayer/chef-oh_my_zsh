@@ -1,12 +1,19 @@
 # oh_my_zsh
+
 [![Build Status](https://travis-ci.org/lxmx/chef-oh-my-zsh.png?branch=master)](https://travis-ci.org/lxmx/chef-oh-my-zsh)
 
 ## Description
 
 This cookbook features:
 
-* A Chef LWRP to install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for system users.
-* A companion recipe for [user::data_bag](https://github.com/fnichol/chef-user) which adds an oh-my-zsh per user installation option.
+- A Chef LWRP to install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for system users.
+- A companion recipe for [user::data_bag](https://github.com/fnichol/chef-user) which adds an oh-my-zsh per user installation option.
+
+## Release
+
+```
+stove
+```
 
 ## Usage
 
@@ -25,19 +32,20 @@ The `oh_my_zsh::data_bag` recipe assumes that you're using the `user::data_bag` 
 
 ## Requirements
 
-
 ### Platform
+
 This cookbook has been [tested](https://github.com/lxmx/chef-oh-my-zsh/blob/master/.kitchen.yml) with the following OSes:
 
-* ubuntu
-* gentoo
+- ubuntu
+- gentoo
 
 ### Cookbooks
+
 The cookbook has got the following dependencies:
 
-* [user](https://github.com/fnichol/chef-user)
-* [ark](https://github.com/bryanwb/chef-ark/)
-* zsh
+- [user](https://github.com/fnichol/chef-user)
+- [ark](https://github.com/bryanwb/chef-ark/)
+- zsh
 
 ## Recipes
 
@@ -46,6 +54,7 @@ The cookbook has got the following dependencies:
 No-op, does nothing.
 
 ### data_bag
+
 Processes `node['users']` and installs oh-my-zsh for the ones whose data_bags enable it, e.g.
 
 ```
@@ -63,21 +72,21 @@ Processes `node['users']` and installs oh-my-zsh for the ones whose data_bags en
 #### Actions
 
 | Action | Description                                                            | Default |
-|--------|------------------------------------------------------------------------|---------|
+| ------ | ---------------------------------------------------------------------- | ------- |
 | ensure | Install oh-my-zsh into `~/.oh-my-zsh`, create and populate `~/.zshrc.` | yes     |
 | create | Install only if `~/.oh-my-zsh or` `~/.zshrc` is missing.               | no      |
 
 #### Attributes
 
-| Attribute      	| Description                                	| Default Value               	|
-|----------------	|--------------------------------------------	|-----------------------------	|
-| login          	| **Name attribute:** The login of the user. 	| `nil`                       	|
-| home           	| User's home directory.                     	| `/home/username or` `/root` 	|
-| theme          	| Theme to use                               	| `alanpeabody`               	|
-| plugins        	| Plugins to enable                          	| `[]`                        	|
-| case_sensitive 	| Use case sensitive completion              	| `false`                     	|
-| autocorrect    	| Use autocorrection feature                 	| `true`                      	|
-| locale         	| set your locale                            	| UTF8                        	|
+| Attribute      | Description                                | Default Value               |
+| -------------- | ------------------------------------------ | --------------------------- |
+| login          | **Name attribute:** The login of the user. | `nil`                       |
+| home           | User's home directory.                     | `/home/username or` `/root` |
+| theme          | Theme to use                               | `alanpeabody`               |
+| plugins        | Plugins to enable                          | `[]`                        |
+| case_sensitive | Use case sensitive completion              | `false`                     |
+| autocorrect    | Use autocorrection feature                 | `true`                      |
+| locale         | set your locale                            | UTF8                        |
 
 #### .zshrc.chef.local / .zshrc.local customziation made easy
 
@@ -88,9 +97,9 @@ So this file should still be under control of your chef cookbook, but rather opt
 
 This file is loaded per user in the end of the .zshrc file
 
-**.zshrc.local** 
+**.zshrc.local**
 
-This file can be created by the user, if he decides to - this file is not controlled by chef - its for the local user to put his little aliases inside. 
+This file can be created by the user, if he decides to - this file is not controlled by chef - its for the local user to put his little aliases inside.
 
 #### Example
 
@@ -106,8 +115,8 @@ end
 
 You can run the test using kitchen
 
-    chef exec kitchen converge   
-    
+    chef exec kitchen converge
+
 ## Credits
 
 This cookbook is heavily based on https://github.com/lxmx/chef-oh-my-zsh so a lot of credits go to Vasily Mikhaylichenko
