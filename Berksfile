@@ -1,5 +1,6 @@
-site :opscode
+source 'https://supermarket.chef.io'
 
+# pulls the dependencies from the metadata.rb
 metadata
 
 group :integration do

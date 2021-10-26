@@ -1,4 +1,14 @@
+
+<% if @powerlevel %>
 # If ever needed - run before anthing else
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+<% end %>
+
 [ -f ~/.zshrc.earliest.local ] && source ~/.zshrc.earliest.local
 [ -f ~/.zshrc.earliest.automated ] && source ~/.zshrc.earliest.automated
 
@@ -54,6 +64,11 @@ export LC_ALL=<%= @locale %>
 
 # include .zshrc.chef.local if it exists
 [ -f ~/.zshrc.chef.local ] && source ~/.zshrc.chef.local
+
+<% if @powerlevel %>
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+<% end %>
 
 # include .zshrc.chef.local if it exists
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

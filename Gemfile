@@ -1,17 +1,22 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rake'
-gem 'berkshelf'
-gem 'foodcritic'
-
-group :integration do
-  gem 'test-kitchen', github: 'opscode/test-kitchen'
-  gem 'kitchen-vagrant', '~> 0.10.0'
-end
-
-gem 'emeril'
+#gem 'rake'
+#gem 'foodcritic'
+#gem 'emeril'
 gem 'stove'
 
 group :development do
-  gem 'knife-community'
+  gem 'tomlrb', '~> 1.2'
+  gem 'knife-cookbook-doc', '>=0.13.0'
+  gem 'berkshelf'
+  gem 'chef-config'
+end
+
+group :integration do
+  gem 'kitchen-inspec'
+  gem 'test-kitchen', '>=3.1.0'
+end
+
+group :dokken do
+  gem 'kitchen-dokken'
 end

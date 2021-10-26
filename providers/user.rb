@@ -31,6 +31,19 @@ def install
     group login
   end
 
+  is_powerlevel_theme = new_resource.theme == 'powerlevel10k/powerlevel10k'
+  if is_powerlevel_theme
+    arch_r = ark ".powerlevel for #{login}" do
+      name 'powerlevel10k'
+      path "#{home}/.oh-my-zsh/custom/themes/"
+      url 'https://github.com/romkatv/powerlevel10k/archive/master.tar.gz'
+      action :put
+      owner login
+      group login
+    end
+
+  end
+
   conf_r = template "#{home}/.zshrc" do
     cookbook 'oh_my_zsh'
     source 'zshrc.erb'
@@ -41,7 +54,8 @@ def install
       :case_sensitive => new_resource.case_sensitive,
       :plugins        => new_resource.plugins,
       :autocorrect    => new_resource.autocorrect,
-      :locale         => new_resource.locale
+      :locale         => new_resource.locale,
+      :powerlevel     => is_powerlevel_theme
     })
   end
 
