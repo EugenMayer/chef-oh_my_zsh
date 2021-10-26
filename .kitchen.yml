@@ -12,7 +12,7 @@ verifier:
   name: inspec
 
 platforms:
-- name: debian-8.6
+  - name: debian-11
 
 suites:
   - name: default

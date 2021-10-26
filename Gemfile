@@ -10,6 +10,7 @@ group :integration do
 end
 
 gem 'emeril'
+gem 'stove'
 
 group :development do
   gem 'knife-community'

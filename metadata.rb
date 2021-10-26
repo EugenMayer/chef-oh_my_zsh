@@ -4,7 +4,7 @@ maintainer_email 'eugen.mayer@kontextwork.de'
 license          'BSD'
 description      'A chef cookbook to install and configure oh-my-zsh, including custom configuration and plugins'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.5'
+version          '0.2.0'
 
 %w{ubuntu centos redhat gentoo}.each { |p| supports p }
 
