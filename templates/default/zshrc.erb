@@ -1,3 +1,7 @@
+# If ever needed - run before anthing else
+[ -f ~/.zshrc.earliest.local ] && source ~/.zshrc.earliest.local
+[ -f ~/.zshrc.earliest.automated ] && source ~/.zshrc.earliest.automated
+
 if [ -e "$HOME/.profile" ]; then
   source $HOME/.profile
 fi
@@ -34,6 +38,10 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(<%= @plugins.join(' ') %>)
+
+# use this to locally override your theme
+[ -f ~/.zshrc.early.local ] && source ~/.zshrc.early.local
+[ -f ~/.zshrc.early.automated ] && source ~/.zshrc.early.automated
 
 source $ZSH/oh-my-zsh.sh
 
